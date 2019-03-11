@@ -1,0 +1,5 @@
+#!/bin/sh
+
+git rebase --exec 'git commit --amend --no-edit -n -S' -i --root
+
+exit 0

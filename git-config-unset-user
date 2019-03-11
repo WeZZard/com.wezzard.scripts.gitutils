@@ -1,0 +1,11 @@
+#!/bin/sh
+
+echo "Unsetting user.name..."
+
+git config --unset user.name
+
+echo "Unsetting user.email..."
+
+git config --unset user.email
+
+exit 0

@@ -1,0 +1,12 @@
+#!/bin/sh
+
+export OLD_NAME=$1
+export NEW_NAME=$2
+
+git filter-branch -f --env-filter '
+if [ "$GIT_COMMITTER_NAME" = "$OLD_NAME" ]; then
+    export GIT_COMMITTER_NAME="$NEW_NAME"
+fi
+' --tag-name-filter cat -- --branches --tags
+
+exit 0
